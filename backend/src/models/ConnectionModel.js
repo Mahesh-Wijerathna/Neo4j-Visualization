@@ -20,7 +20,7 @@ class ConnectionModel {
     static async findByConnectionId(connectionId) {
         const session = require('../config/db').session;
         const result = await session.run(
-            'MATCH (c:Connection {connectionId: $connectionId}) RETURN c',
+            'MATCH c=()-[r:CONNECTION {name:$connectionId}]->() RETURN c',
             { connectionId }
         );
         return result.records.length > 0 ? result.records[0].get('c') : null;
@@ -29,17 +29,17 @@ class ConnectionModel {
     static async updateStatus(connectionId, newStatus) {
         const session = require('../config/db').session;
         const result = await session.run(
-            'MATCH (c:Connection {connectionId: $connectionId}) SET c.status = $newStatus RETURN c',
+            'MATCH ()-[r:CONNECTION {name: $connectionId}]->() SET r.status = $newStatus RETURN r',
             { connectionId, newStatus }
         );
-        return result.records[0].get('c');
+        return result.records[0].get('r');
         }
         
 
     static async delete(connectionId) {
         const session = require('../config/db').session;
         await session.run(
-            'MATCH (c:Connection {connectionId: $connectionId}) DELETE c',
+            'MATCH ()-[c:CONNECTION {name: $connectionId}]->() DELETE c',
             { connectionId }
         );
     }

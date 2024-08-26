@@ -46,7 +46,7 @@ class DeviceModel {
     static async updateStatus(ipAddress, newStatus) {
       const session = require('../config/db').session;
       const result = await session.run(
-        'MATCH (d {ipAddress: $ipAddress}) SET d.status = $newStatus RETURN d',
+        'MATCH (d {name: $ipAddress}) SET d.status = $newStatus RETURN d',
         { ipAddress, newStatus }
       );
       return result.records[0].get('d');
@@ -55,7 +55,7 @@ class DeviceModel {
     static async delete(ipAddress) {
       const session = require('../config/db').session;
       await session.run(
-        'MATCH (d {ipAddress: $ipAddress}) DELETE d',
+        'MATCH (d {name: $ipAddress}) DELETE d',
         { ipAddress }
       );
     }

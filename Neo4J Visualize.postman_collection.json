@@ -1,0 +1,573 @@
+{
+	"info": {
+		"_postman_id": "39ea69d7-b748-4c83-bb76-38823181c832",
+		"name": "Neo4J Visualize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28711512",
+		"_collection_link": "https://mahesh-3649.postman.co/workspace/Mahesh~1c2586d7-1caf-4ef2-850c-1360ba2a9488/collection/28711512-39ea69d7-b748-4c83-bb76-38823181c832?action=share&source=collection_link&creator=28711512"
+	},
+	"item": [
+		{
+			"name": "Checking",
+			"item": [
+				{
+					"name": "Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device Router",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/devices/router",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"router"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device Controller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/devices/controller",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"controller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device Model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/devices/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"model"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connection Router",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections/router",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"router"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connection Controller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections/router",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"router"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connection Model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"model"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Create Server",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ipAddress",
+									"value": "192.168.8.0",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "SERVER",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test server",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "up",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "ipAddress",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Router",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ipAddress",
+									"value": "192.168.8.00",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "ROUTER",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test router",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "up",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "ipAddress",
+									"value": "192.168.8.00",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "ROUTER",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "test Router",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "up",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get With IP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/devices/192.168.8.01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"192.168.8.01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "down",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/devices/192.168.8.00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"192.168.8.00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Server",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "down",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/devices/192.168.8.0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"192.168.8.0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Router",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "down",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/devices/192.168.8.00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"devices",
+								"192.168.8.00"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Connections",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "connectionId",
+									"value": "testing_id",
+									"type": "text"
+								},
+								{
+									"key": "sourceIp",
+									"value": "192.168.8.07",
+									"type": "text"
+								},
+								{
+									"key": "targetIp",
+									"value": "192.168.8.08",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "connected",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/connections/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get With Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections/sapmleID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"sapmleID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "disconnected",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/connections/testing_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"testing_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/connections/testing_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"connections",
+								"testing_id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
