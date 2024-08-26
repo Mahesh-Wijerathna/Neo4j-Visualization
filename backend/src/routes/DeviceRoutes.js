@@ -7,6 +7,7 @@ const router = express.Router();
 router.get('/router', (req, res) => res.send('Device Routes is Working'));
 router.get('/controller', DeviceController.controller);
 router.get('/model', DeviceController.model);
+
 router.post('/', DeviceController.create);
 router.get('/:ipAddress', DeviceController.getWithIpAddress);
 router.get('/', DeviceController.getAll);
